@@ -1,0 +1,112 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cengal_app_dir_path_finder"
+dynamic = ["version"]
+description = "Offering a unified API for easy retrieval of OS-specific application directories, enhancing data management across Windows, Linux, and macOS"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.8"
+authors = [
+    { name = "ButenkoMS", email = "gtalk@butenkoms.space" },
+]
+keywords = [
+    "cengal",
+    "crossplatform",
+    "directory access",
+    "file paths",
+    "application data",
+    "system directories",
+    "path finder",
+    "data management",
+    "config storage",
+    "app directory",
+    "user data",
+    "cache management",
+    "log storage",
+    "environment paths",
+    "os integration",
+    "Windows",
+    "Linux",
+    "macOS",
+]
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Console',
+    'Environment :: MacOS X',
+    'Environment :: Win32 (MS Windows)',
+    'Environment :: X11 Applications',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: Manufacturing',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Telecommunications Industry',
+    'Operating System :: Android',
+    'Operating System :: MacOS',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: Microsoft :: Windows :: Windows 7',
+    'Operating System :: Microsoft :: Windows :: Windows 8',
+    'Operating System :: Microsoft :: Windows :: Windows 8.1',
+    'Operating System :: Microsoft :: Windows :: Windows 10',
+    'Operating System :: Microsoft :: Windows :: Windows 11',
+    'Operating System :: Microsoft :: Windows :: Windows Vista',
+    'Operating System :: Microsoft :: Windows :: Windows XP',
+    'Operating System :: Microsoft :: Windows :: Windows Server 2008',
+    'Operating System :: Microsoft :: Windows :: Windows Server 2003',
+    'Operating System :: Microsoft :: Windows :: Windows NT/2000',
+    'Operating System :: POSIX',
+    'Operating System :: POSIX :: BSD',
+    'Operating System :: POSIX :: BSD :: OpenBSD',
+    'Operating System :: POSIX :: BSD :: FreeBSD',
+    'Operating System :: POSIX :: BSD :: NetBSD',
+    'Operating System :: POSIX :: Linux',
+    'Operating System :: Unix',
+    'Operating System :: iOS',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: Implementation',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Programming Language :: Python :: Implementation :: PyPy',
+    'Programming Language :: Python :: Implementation :: MicroPython',
+    'Topic :: Desktop Environment',
+    'Topic :: Games/Entertainment',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries',
+    'Topic :: Software Development :: Libraries :: Application Frameworks',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: System',
+    'Topic :: System :: Filesystems',
+    'Topic :: System :: Logging',
+    'Typing :: Typed',
+]
+dependencies = [
+    "pyobjc; platform_system == 'Darwin'",
+    "cengal_light",
+]
+
+[project.urls]
+Homepage = "https://github.com/FI-Mihej/cengal_app_dir_path_finder"
+
+[tool.hatch.version]
+path = "cengal_app_dir_path_finder/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/cengal_app_dir_path_finder",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "/cengal_app_dir_path_finder",
+]
