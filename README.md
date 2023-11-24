@@ -188,6 +188,6 @@ pip install cengal
 
 # License
 
-Copyright © 2012-2023 ButenkoMS. All rights reserved.
+Copyright © 2012-2024 ButenkoMS. All rights reserved.
 
 Licensed under the Apache License, Version 2.0.
