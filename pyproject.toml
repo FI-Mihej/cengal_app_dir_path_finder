@@ -91,7 +91,9 @@ classifiers = [
     'Typing :: Typed',
 ]
 dependencies = [
-    "pyobjc; platform_system == 'Darwin'",
+    "typing_extensions",
+    "pyobjc; platform_system == 'Darwin' and platform_python_implementation == 'CPython'",
+    "pywin32; platform_system == 'Windows' and platform_python_implementation == 'CPython'",
     "cengal_light",
 ]
 

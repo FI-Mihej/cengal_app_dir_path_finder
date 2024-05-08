@@ -1,6 +1,12 @@
-# CengalAppDirPathFinder
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/FI-Mihej/cengal_app_dir_path_finder) ![Static Badge](https://img.shields.io/badge/OS-Linux_%7C_Windows_%7C_macOS-blue)
 
-CengalAppDirPathFinder is a cross-platform Python module designed to simplify the process of locating OS-recommended directories for application data, cache, logs, and more. It seamlessly integrates with Windows, Linux, and macOS, utilizing platform-specific standards like `KNOWNFOLDERID constants` on Windows, `XDG standards` on Linux, and `NSSearchPathForDirectoriesInDomains` on macOS. This module offers a unified API for accessing various types of directories, such as local, roaming, and program-specific paths, enhancing application compatibility and data management across different operating systems.
+![PyPI - Version](https://img.shields.io/pypi/v/cengal_app_dir_path_finder) ![PyPI - Format](https://img.shields.io/pypi/format/cengal-light?color=darkgreen) ![Static Badge](https://img.shields.io/badge/wheels-Linux_%7C_Windows_%7C_macOS-blue) ![Static Badge](https://img.shields.io/badge/Architecture-x86__64_%7C_ARM__64-blue) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cengal-light) ![Static Badge](https://img.shields.io/badge/PyPy-3.8_%7C_3.9_%7C_3.10-blue) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/cengal-light) 
+
+![GitHub License](https://img.shields.io/github/license/FI-Mihej/cengal_app_dir_path_finder?color=darkgreen) ![Static Badge](https://img.shields.io/badge/API_status-Stable-darkgreen)
+
+# cengal_app_dir_path_finder package
+
+`cengal_app_dir_path_finder` is a cross-platform Python module designed to simplify the process of locating OS-recommended directories for application data, cache, logs, and more. It seamlessly integrates with Windows, Linux, and macOS, utilizing platform-specific standards like `KNOWNFOLDERID constants` on Windows, `XDG standards` on Linux, and `NSSearchPathForDirectoriesInDomains` on macOS. This module offers a unified API for accessing various types of directories, such as local, roaming, and program-specific paths, enhancing application compatibility and data management across different operating systems.
 
 # Installation
 
@@ -28,6 +34,53 @@ settings_json_path: str = os.path.join(local_data_dir_path, 'settings.json')
 with open(settings_json_path, 'w') as file:
     file.write(my_app_settings)
 ```
+
+## API State
+
+Stable. Guaranteed to not have braking changes in the future (see bellow for details).
+
+Any hypothetical further API-breaking changes will lead to new module creation within the package. An old version will continue its existence and continue to be importable by an explicit address (see Details bellow).
+
+<details>
+<summary title="Details"><kbd> Details </kbd></summary>
+
+The current (currently latest) version can be imported either by:
+
+```python
+from cengal_app_dir_path_finder import *
+```
+
+or by
+
+```python
+from cengal_app_dir_path_finder.versions.v_0 import *
+```
+
+If further braking changes will be made to the API - a new (`v_1`) version will be made. As result:
+
+Current (`v_0`) version will continue to be accessible by an explicit address:
+
+```python
+from cengal_app_dir_path_finder.versions.v_0 import *
+```
+
+Latest (`v_1`) version will be accessible by either: 
+
+```python
+from cengal_app_dir_path_finder import *
+```
+
+or by
+
+```python
+from cengal_app_dir_path_finder.versions.v_1 import *
+```
+
+This is a general approach across the entire [Cengal](https://github.com/FI-Mihej/Cengal) library. It gives me the ability to effectively work on its huge codebase, even by myself.
+
+By the way. I'm finishing an implementation of [CengalPolyBuild](https://github.com/FI-Mihej/CengalPolyBuild) - my package creation system which provides same approach to users. It is a comprehensive and hackable build system for multilingual Python packages: Cython (including automatic conversion from Python to Cython), C/C++, Objective-C, Go, and Nim, with ongoing expansions to include additional languages. Basically, it will provide easy access to all the same features I'm already using in the Cengal library package creation and management processes.
+
+</details>
 
 ## Supported foler types
 
@@ -967,6 +1020,7 @@ Represents part of Cengal library:
 * https://github.com/FI-Mihej/Cengal
 
 An equivalent import:
+
 ```python
 from cengal.file_system.app_fs_structure.app_dir_path import AppDirectoryType, AppDirPath
 ```
@@ -980,6 +1034,11 @@ pip install cengal
 
 # Projects using Cengal
 
+* [CengalPolyBuild](https://github.com/FI-Mihej/CengalPolyBuild) - A Comprehensive and Hackable Build System for Multilingual Python Packages: Cython (including automatic conversion from Python to Cython), C/C++, Objective-C, Go, and Nim, with ongoing expansions to include additional languages. (Planned to be released soon) 
+* [InterProcessPyObjects](https://github.com/FI-Mihej/InterProcessPyObjects) - High-performance package delivers blazing-fast inter-process communication through shared memory, enabling Python objects to be shared across processes with exceptional efficiency. 
+* [cengal_app_dir_path_finder](https://github.com/FI-Mihej/cengal_app_dir_path_finder) - A Python module offering a unified API for easy retrieval of OS-specific application directories, enhancing data management across Windows, Linux, and macOS 
+* [cengal_cpu_info](https://github.com/FI-Mihej/cengal_cpu_info) - Extended, cached CPU info with consistent output format.
+* [cengal_memory_barriers](https://github.com/FI-Mihej/cengal_memory_barriers) - Fast crossplatform memory barriers for Python.
 * [flet_async](https://github.com/FI-Mihej/flet_async) - wrapper which makes [Flet](https://github.com/flet-dev/flet) async and brings booth Cengal.coroutines and asyncio to Flet (Flutter based UI)
 * [justpy_containers](https://github.com/FI-Mihej/justpy_containers) - wrapper around [JustPy](https://github.com/justpy-org/justpy) in order to bring more security and more production-needed features to JustPy (VueJS based UI)
 * [Bensbach](https://github.com/FI-Mihej/Bensbach) - decompiler from Unreal Engine 3 bytecode to a Lisp-like script and compiler back to Unreal Engine 3 bytecode. Made for a game modding purposes
