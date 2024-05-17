@@ -94,7 +94,7 @@ dependencies = [
     "typing_extensions",
     "pyobjc; platform_system == 'Darwin' and platform_python_implementation == 'CPython'",
     "pywin32; platform_system == 'Windows' and platform_python_implementation == 'CPython'",
-    "cengal_light",
+    "cengal_light>=4.4.0",
 ]
 
 [project.urls]

@@ -6,6 +6,8 @@
 
 # cengal_app_dir_path_finder package
 
+> cengal_app_dir_path_finder is a part of the [Cengal](https://github.com/FI-Mihej/Cengal) library. If you have any questions or would like to participate in discussions, feel free to join the [Cengal Discord](https://discord.gg/TAy7xNgR). Your support and involvement are greatly appreciated as Cengal evolves.
+
 `cengal_app_dir_path_finder` is a cross-platform Python module designed to simplify the process of locating OS-recommended directories for application data, cache, logs, and more. It seamlessly integrates with Windows, Linux, and macOS, utilizing platform-specific standards like `KNOWNFOLDERID constants` on Windows, `XDG standards` on Linux, and `NSSearchPathForDirectoriesInDomains` on macOS. This module offers a unified API for accessing various types of directories, such as local, roaming, and program-specific paths, enhancing application compatibility and data management across different operating systems.
 
 # Installation
